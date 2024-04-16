@@ -174,8 +174,8 @@ fun LoginScreen(navController: NavController? = null) {
                             call: Call<ResponseBody>,
                             response: Response<ResponseBody>
                         ) {
-                            // retornando 200 no login
-                            Log.d("Response", "${response}")
+                            // retornando token do usuario logado
+                            Log.d("Response", "${response.body()?.string()}")
                         }
                         override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                             Log.d("Hi", "error")
