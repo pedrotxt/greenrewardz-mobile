@@ -6,7 +6,6 @@ import androidx.activity.compose.setContent
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.fiap.esgapp.screens.HomeScreen
 import com.fiap.esgapp.screens.LoginScreen
 
 class MainActivity : ComponentActivity() {
@@ -17,7 +16,7 @@ class MainActivity : ComponentActivity() {
             val navController = rememberNavController()
             NavHost(navController = navController, startDestination = "login") {
                 composable(route = "login") { LoginScreen(navController) }
-                composable(route = "home") { HomeScreen(navController) }
+
             }
         }
     }

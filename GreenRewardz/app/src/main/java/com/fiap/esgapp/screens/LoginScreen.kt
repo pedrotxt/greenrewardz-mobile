@@ -43,6 +43,7 @@ import com.fiap.esgapp.network.services
 
 import com.fiap.esgapp.ui.theme.ESGAppTheme
 import com.google.gson.Gson
+import com.google.gson.JsonObject
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -166,19 +167,21 @@ fun LoginScreen(navController: NavController? = null) {
 
                     val service: ApiService = retrofit.create(ApiService::class.java)
 
-                    val requestBody = Post("test@tes.com", "teste")
+                    val requestBody = Post("lucascadastrando@gmail.com", "lucas123")
 
-                    /*
                     service.postRequest(requestBody).enqueue(object : Callback<ResponseBody> {
                         override fun onResponse(
                             call: Call<ResponseBody>,
                             response: Response<ResponseBody>
                         ) {
-                            // handle the response
-                            // Log.d("Response", "${response.body()}")
+                            // retornando 200 no login
+                            Log.d("Response", "${response}")
                         }
-                    }
-                    */
+                        override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                            Log.d("Hi", "error")
+                        }
+
+                    })
 
                 },
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF1DBF72)),
@@ -218,7 +221,6 @@ fun LoginScreen(navController: NavController? = null) {
         }
     }
 }
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable

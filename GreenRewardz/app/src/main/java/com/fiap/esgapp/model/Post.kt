@@ -1,6 +1,6 @@
 package com.fiap.esgapp.model
 
 data class Post (
-    val email: String,
+    val login: String,
     val password: String
 )
